@@ -1,0 +1,35 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="Time Counter">
+    <output-path>X:/Builds/Java/TimeCounter/ass</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="" />
+        <option name="height" value="450" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/sample/Graphicloads-Food-Drink-Coffee-bean.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="Time Counter" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+        <option name="width" value="700" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="TimeCounter.jar">
+        <element id="module-output" name="TimeCounter" />
+        <element id="directory" name="src">
+          <element id="directory" name="sample">
+            <element id="file-copy" path="$PROJECT_DIR$/src/sample/log.txt" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/sample/table.txt" />
+          </element>
+        </element>
+      </element>
+      <element id="library" level="project" name="mysql-connector-java-8.0.16" />
+    </root>
+  </artifact>
+</component>

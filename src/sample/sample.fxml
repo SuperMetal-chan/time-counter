@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="700.0" style="-fx-background-color: #b4baba;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="43.0" layoutY="28.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Введите потраченное время:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addTimeHours" layoutX="253.0" layoutY="24.0" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #cacdce; -fx-border-color: #e5e9ea; -fx-border-radius: 3; -fx-border-width: 1;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="addTimeMinutes" layoutX="351.0" layoutY="24.0" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #cacdce; -fx-border-color: #e5e9ea; -fx-border-radius: 3; -fx-border-width: 1;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Label layoutX="325.0" layoutY="28.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="ч.">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="28.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="м.">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="69.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Введите название занятия:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addName" layoutX="241.0" layoutY="65.0" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: #cacdce; -fx-border-color: #e5e9ea; -fx-border-radius: 3; -fx-border-width: 1;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TableView fx:id="progressTable" editable="true" layoutX="42.0" layoutY="117.0" prefHeight="465.0" prefWidth="340.0" style="-fx-background-color: #b6baba; -fx-border-radius: 5;">
+        <columns>
+          <TableColumn fx:id="dayColumn" prefWidth="91.0" sortType="DESCENDING" text="День недели" />
+          <TableColumn fx:id="nameColumn" prefWidth="132.0" sortType="DESCENDING" text="Потраченное время" />
+            <TableColumn fx:id="timeColumn" prefWidth="116.0" sortType="DESCENDING" text="Название события" />
+        </columns>
+      </TableView>
+      <Label layoutX="440.0" layoutY="193.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Потрачено времени сегодня: ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="remainingTimeToday" alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" layoutY="214.0" prefHeight="30.0" prefWidth="115.0" style="-fx-effect: dropshadow( one-pass-box , black ,4, 2, 0, 0);" text="4:00" textAlignment="JUSTIFY" textFill="#f2f2f2">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="425.0" layoutY="426.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Потрачено времени на этой неделе:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="remainingTimeThisWeek" alignment="CENTER" contentDisplay="CENTER" layoutX="477.0" layoutY="447.0" prefHeight="30.0" prefWidth="155.0" style="-fx-effect: dropshadow( one-pass-box , black ,4, 2, 0, 0);" text="30:00/30:30" textFill="#f2f2f2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="396.0" layoutY="135.0" prefHeight="32.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Текущий день недели:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentDayLabel" layoutX="559.0" layoutY="134.0" prefHeight="32.0" prefWidth="130.0" style="-fx-effect: dropshadow( one-pass-box , black ,4, 2, 0, 0);" text="Понедельник" textFill="#f2f2f2">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="confirmAdding" layoutX="386.0" layoutY="65.0" mnemonicParsing="false" style="-fx-background-color: #d9dee0; -fx-effect: dropshadow( one-pass-box ,  white,4, 2, 0, 0);" text="Подтвердить">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="leftTimeThisWeek" alignment="CENTER" contentDisplay="CENTER" layoutX="477.0" layoutY="524.0" prefHeight="30.0" prefWidth="155.0" style="-fx-effect: dropshadow( one-pass-box , black ,4, 2, 0, 0);" text="30:00/30:30" textFill="#f2f2f2">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="leftTimeThisWeekLabel" layoutX="427.0" layoutY="497.0" style="-fx-effect: dropshadow( one-pass-box , white ,2, 2, 0, 0);" text="Осталось времени на этой неделе:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="averageTime" alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" layoutY="301.0" prefHeight="30.0" prefWidth="115.0" style="-fx-effect: dropshadow( one-pass-box , black ,4, 2, 0, 0);" text="4:00" textAlignment="JUSTIFY" textFill="#f2f2f2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="averageTimeLabel" layoutX="434.0" layoutY="255.0" prefHeight="46.0" prefWidth="232.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Среднее потраченное время в день на этой неделе:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="averageTimeLabel1" layoutX="434.0" layoutY="340.0" prefHeight="46.0" prefWidth="232.0" style="-fx-effect: dropshadow( one-pass-box , #e5e9ea ,2, 2, 0, 0);" text="Среднее оставшееся время в день на этой неделе:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="averageTimeLeft" alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" layoutY="386.0" prefHeight="30.0" prefWidth="115.0" style="-fx-effect: dropshadow( one-pass-box , black ,4, 2, 0, 0);" text="4:00" textAlignment="JUSTIFY" textFill="#f2f2f2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
